@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Fluxo Comprar · Nova estrutura de Google Ads · One pager</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#0F0C1C; --ink-2:#1A1530; --lav:#C9BCFF; --lav-dim:#8F84B8;
+  --paper:#FFFFFF; --text:#16131F; --mute:#6A6679; --line:#E6E3EE; --soft:#F6F4FA;
+  --t1:#2347D6; --t2:#4A2590; --t3:#7A7788;
+  --t1-bg:#EAEFFF; --t2-bg:#F0EAFB; --t3-bg:#F1F0F4;
+  --temp:#A85A00; --temp-bg:#FFF8E6; --temp-line:#F2D58C;
+  --good:#15803D;
+  color-scheme:light;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --paper:#121019; --text:#ECEAF3; --mute:#9D99AE; --line:#2A2636; --soft:#1A1724;
+    --t1:#7C95FF; --t2:#B39CFF; --t3:#A4A1B4;
+    --t1-bg:#1A2247; --t2-bg:#261A40; --t3-bg:#22202B;
+    --temp:#F3B14E; --temp-bg:#2A2110; --temp-line:#5E4718; --good:#4ADE80;
+    color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#121019; --text:#ECEAF3; --mute:#9D99AE; --line:#2A2636; --soft:#1A1724;
+  --t1:#7C95FF; --t2:#B39CFF; --t3:#A4A1B4;
+  --t1-bg:#1A2247; --t2-bg:#261A40; --t3-bg:#22202B;
+  --temp:#F3B14E; --temp-bg:#2A2110; --temp-line:#5E4718; --good:#4ADE80;
+  color-scheme:dark;
+}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*,*::before,*::after{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--text);
+  font-family:"Archivo",Arial,Helvetica,sans-serif;font-size:16px;line-height:1.55;
+  -webkit-font-smoothing:antialiased}
+.wrap{max-width:1180px;margin:0 auto;padding:0 clamp(20px,4vw,56px)}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--t1);outline-offset:3px}
+
+/* ---------- Hero ---------- */
+.hero{background:var(--ink);color:#fff;position:relative;overflow:hidden}
+.hero::before{content:"";position:absolute;inset:0;
+  background:
+    radial-gradient(520px 380px at 82% 32%,rgba(110,70,210,.42),transparent 70%),
+    repeating-linear-gradient(0deg,rgba(255,255,255,.035) 0 1px,transparent 1px 4px);
+  -webkit-mask-image:linear-gradient(90deg,transparent 35%,#000 70%);
+          mask-image:linear-gradient(90deg,transparent 35%,#000 70%);
+  pointer-events:none}
+.hero .wrap{position:relative;padding-top:36px;padding-bottom:44px}
+.brandbar{display:flex;align-items:center;gap:14px;font-size:13px;color:#B9B4CC}
+.logo{font-stretch:125%;font-weight:800;letter-spacing:.02em;color:#fff;font-size:15px}
+.logo span{font-weight:300;font-stretch:90%;letter-spacing:0;margin-left:2px;color:#CFCAE0}
+.brandbar i{width:1px;height:14px;background:#4A4560}
+h1{margin:clamp(56px,9vw,96px) 0 0;font-stretch:125%;font-weight:700;
+  font-size:clamp(44px,7.4vw,92px);line-height:.96;letter-spacing:-.025em}
+.h1-sub{display:block;margin-top:14px;font-stretch:100%;font-weight:400;color:var(--lav);
+  font-size:clamp(24px,3.4vw,40px);letter-spacing:-.015em;line-height:1.1}
+.lede{max-width:60ch;margin:26px 0 0;color:#D9D5E6;font-size:clamp(16px,1.6vw,18px)}
+.hero-grid{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:clamp(32px,4vw,64px);align-items:end}
+.hero-grid h1{font-size:clamp(44px,5.8vw,78px)}
+.vcard{display:block;margin:0;color:#fff}
+.vframe video{display:block;width:100%;height:100%;object-fit:cover;background:#15102A}
+.vmeta a{display:inline-flex;align-items:center;gap:6px;min-height:44px;color:var(--lav);text-decoration:none;font-weight:500}
+.vmeta a:hover{text-decoration:underline;text-underline-offset:3px}
+.vmeta{align-items:center!important;margin-top:6px!important}
+.playbook{display:grid;grid-template-columns:1fr auto;gap:16px 32px;align-items:center;margin-top:48px;padding:28px 32px;
+  background:var(--ink);color:#fff;border-radius:4px;position:relative;overflow:hidden}
+.playbook::before{content:"";position:absolute;inset:0;background:radial-gradient(420px 260px at 90% 0%,rgba(110,70,210,.45),transparent 70%);pointer-events:none}
+.playbook > *{position:relative}
+.playbook small{display:block;color:var(--lav);font-size:13px;font-weight:600;margin-bottom:6px}
+.playbook h3{font-size:clamp(20px,2.2vw,26px);font-stretch:112%;margin:0;color:#fff}
+.playbook p{color:#D9D5E6;font-size:14.5px;margin-top:6px;max-width:62ch}
+.pb-btn{display:inline-flex;align-items:center;gap:10px;min-height:48px;padding:0 22px;border-radius:4px;background:#fff;color:var(--ink);
+  font-weight:650;font-size:15px;text-decoration:none;white-space:nowrap;transition:background .15s}
+.pb-btn:hover{background:var(--lav)}
+.pb-btn:focus-visible{outline:2px solid var(--lav);outline-offset:3px}
+@media (max-width:700px){.playbook{grid-template-columns:1fr;padding:24px}.pb-btn{justify-content:center}}
+.vcard{display:block;text-decoration:none;color:#fff;border-radius:10px;outline-offset:4px}
+.vframe{position:relative;display:grid;place-items:center;aspect-ratio:16/9;border-radius:10px;overflow:hidden;
+  border:1px solid rgba(201,188,255,.22);
+  background:
+    radial-gradient(120% 90% at 70% 20%,rgba(124,82,230,.55),transparent 60%),
+    repeating-linear-gradient(0deg,rgba(255,255,255,.04) 0 1px,transparent 1px 4px),
+    #15102A;
+  box-shadow:0 24px 60px -24px rgba(0,0,0,.7)}
+.vplay{width:72px;height:72px;border-radius:50%;display:grid;place-items:center;background:#fff;color:var(--ink);
+  padding-left:4px;transition:transform .2s ease-out}
+.vcard:hover .vplay,.vcard:focus-visible .vplay{transform:scale(1.08)}
+.vcard:focus-visible{outline:2px solid var(--lav)}
+.vmeta{display:flex;justify-content:space-between;align-items:baseline;gap:12px;margin-top:14px;font-size:14px}
+.vmeta b{font-weight:650}
+.vmeta > span{display:inline-flex;align-items:center;gap:6px;color:var(--lav-dim)}
+@media (max-width:900px){.hero-grid{grid-template-columns:1fr;align-items:start}}
+@media (prefers-reduced-motion:reduce){.vplay{transition:none}}
+.meta{display:grid;grid-template-columns:repeat(3,auto);justify-content:start;gap:12px 56px;
+  margin-top:48px;padding-top:20px;border-top:1px solid #34304A;font-size:14px}
+.meta dt{color:var(--lav-dim);font-size:12px;font-weight:500;margin-bottom:2px}
+.meta dd{margin:0;color:#EDEAF6}
+
+/* ---------- Generic section ---------- */
+section{padding:clamp(44px,6vw,72px) 0;border-bottom:1px solid var(--line)}
+.sec-head{display:flex;gap:18px;align-items:baseline;margin-bottom:28px;flex-wrap:wrap}
+.sec-head .n{font-stretch:125%;font-weight:700;color:var(--mute);font-size:14px;min-width:24px}
+h2{margin:0;font-stretch:112%;font-weight:700;font-size:clamp(24px,2.8vw,34px);
+  line-height:1.12;letter-spacing:-.015em;max-width:44ch}
+h3{margin:0 0 6px;font-size:17px;font-weight:650;letter-spacing:-.005em}
+p{margin:0}
+.muted{color:var(--mute)}
+.small{font-size:13px}
+
+/* ---------- Context ---------- */
+.facts{display:grid;grid-template-columns:repeat(4,1fr);gap:0;border-top:2px solid var(--text)}
+.fact{padding:18px 20px 18px 0}
+.fact + .fact{padding-left:20px;border-left:1px solid var(--line)}
+.fact b{display:block;font-stretch:118%;font-weight:700;font-size:clamp(28px,3.6vw,44px);
+  line-height:1;letter-spacing:-.02em;font-variant-numeric:tabular-nums}
+.fact span{display:block;margin-top:8px;font-size:14px;color:var(--mute)}
+.ctx{display:grid;grid-template-columns:1fr 1fr 1fr;gap:36px;margin-top:36px}
+.ctx p{font-size:15px;color:var(--text)}
+.ctx .quote{grid-column:1/-1;margin-top:4px;padding:22px 26px;background:var(--soft);
+  border-left:3px solid var(--t2);font-stretch:108%;font-size:clamp(18px,2vw,22px);
+  font-weight:500;line-height:1.35;letter-spacing:-.01em}
+.ctx .quote small{display:block;margin-top:8px;font-stretch:100%;font-size:13px;font-weight:400;color:var(--mute)}
+
+/* ---------- Matrix (signature element) ---------- */
+.matrix-scroll{overflow-x:auto;margin:0 -4px;padding:0 4px 4px}
+.matrix{display:grid;min-width:960px;
+  grid-template-columns:240px repeat(5,minmax(0,1fr));gap:6px}
+.colhead{padding:14px 14px 12px;border-top:3px solid var(--text)}
+.colhead h3{font-size:15px;margin:0}
+.colhead p{font-size:12.5px;color:var(--mute);margin-top:4px;line-height:1.4}
+.colhead.search{border-color:var(--t1)}
+.colhead.pmax{border-color:var(--t2)}
+.colhead.dg{border-color:var(--t3)}
+.corner{padding:14px 0 12px;font-size:13px;color:var(--mute);align-self:end}
+.tier{padding:16px 16px 14px;border-radius:2px;background:var(--soft)}
+.tier .name{display:flex;justify-content:space-between;align-items:baseline;gap:8px}
+.tier .name b{font-stretch:125%;font-weight:800;font-size:26px;line-height:1;color:var(--tc)}
+.tier .name span{font-size:12px;color:var(--mute);text-align:right}
+.tier .bar{height:5px;background:var(--line);margin:12px 0 10px;border-radius:3px;overflow:hidden}
+.tier .bar i{display:block;height:100%;width:var(--w);background:var(--tc);border-radius:3px;
+  transform-origin:left;animation:grow 1.1s cubic-bezier(.2,.7,.2,1) both;animation-delay:var(--d,0s)}
+@keyframes grow{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+.tier dl{display:grid;grid-template-columns:repeat(3,auto);gap:2px 14px;margin:0;font-size:12px}
+.tier dt{color:var(--mute)}
+.tier dd{margin:0;font-weight:650;font-size:14px;font-variant-numeric:tabular-nums}
+.t1{--tc:var(--t1)} .t2{--tc:var(--t2)} .t3{--tc:var(--t3)}
+.cell{border:1px solid var(--line);border-radius:2px;padding:14px;display:flex;flex-direction:column;
+  justify-content:center;gap:2px;min-height:96px}
+.cell .id{font-stretch:118%;font-weight:700;font-size:20px;color:var(--tc,var(--text));line-height:1}
+.cell .lbl{font-size:12.5px;color:var(--mute);line-height:1.35;margin-top:4px}
+.cell.on{background:var(--tbg);border-color:transparent}
+.t1 .cell.on,.cell.on.t1{--tbg:var(--t1-bg)}
+.cell.on.t1{--tbg:var(--t1-bg)} .cell.on.t2{--tbg:var(--t2-bg)} .cell.on.t3{--tbg:var(--t3-bg)}
+.cell.off{background:repeating-linear-gradient(135deg,transparent 0 6px,var(--soft) 6px 7px)}
+.cell.off .lbl{margin:0}
+.cell.temp{background:var(--temp-bg);border:1px dashed var(--temp-line)}
+.cell.temp .id{color:var(--temp)}
+.cell.split{flex-direction:row;align-items:stretch;gap:8px;padding:8px}
+.cell.split > div{flex:1;padding:6px;border-radius:2px;display:flex;flex-direction:column;justify-content:center}
+.cell.split .p{background:var(--t1-bg)}
+.cell.split .p .id{color:var(--t1)}
+.cell.split .tp{background:var(--temp-bg);border:1px dashed var(--temp-line)}
+.cell.split .tp .id{color:var(--temp)}
+.rowlabel{padding:16px;background:var(--soft);border-radius:2px;display:flex;flex-direction:column;justify-content:center}
+.rowlabel b{font-weight:700;font-size:16px}
+.rowlabel span{font-size:12px;color:var(--mute);margin-top:2px}
+.span4{grid-column:span 4} .span3{grid-column:span 3}
+.legend{display:flex;flex-wrap:wrap;gap:10px 32px;align-items:center;margin-top:22px;font-size:14px}
+.legend .count{display:flex;align-items:baseline;gap:8px}
+.legend .count b{font-stretch:125%;font-weight:800;font-size:34px;line-height:1}
+.legend .count.tmp b{color:var(--temp)}
+.legend .count.all b{color:var(--mute)}
+.legend .sw{display:inline-flex;align-items:center;gap:8px;color:var(--mute);font-size:13px}
+.legend .sw i{width:18px;height:12px;border-radius:2px;background:var(--t1-bg)}
+.legend .sw i.d{background:var(--temp-bg);border:1px dashed var(--temp-line)}
+.legend .spacer{flex:1}
+
+/* ---------- Tabs ---------- */
+.tabs{display:inline-flex;gap:2px;padding:3px;background:var(--soft);border:1px solid var(--line);border-radius:6px;margin-bottom:22px}
+.tabs button{font:inherit;font-size:14px;font-weight:600;color:var(--mute);background:transparent;border:0;
+  padding:8px 16px;border-radius:4px;cursor:pointer}
+.tabs button[aria-selected="true"]{background:var(--paper);color:var(--text);box-shadow:0 0 0 1px var(--line)}
+.tree-scroll{overflow-x:auto}
+.tree{display:block;width:100%;min-width:960px;height:auto}
+.tree .ln{stroke:var(--mute);stroke-width:1.4;fill:none}
+.tree .root rect{fill:var(--text)} .tree .root text{fill:var(--paper)}
+.tree .br rect{fill:var(--soft);stroke:var(--tc);stroke-width:2}
+.tree .br text{fill:var(--text);font-weight:700;font-size:14px}
+.tree .lf rect{fill:var(--paper);stroke:var(--line)}
+.tree .lf .t{fill:var(--text);font-weight:650;font-size:13px}
+.tree .lf .s{fill:var(--mute);font-size:11px}
+.tree .ch rect{fill:var(--t1-bg)} .tree .ch text{fill:var(--t1);font-weight:700;font-size:12px}
+.tree .ch.p rect{fill:var(--t2-bg)} .tree .ch.p text{fill:var(--t2)}
+.tree .ch.g rect{fill:var(--t3-bg)} .tree .ch.g text{fill:var(--t3)}
+.tree .ch.tmp rect{fill:var(--temp-bg);stroke:var(--temp-line);stroke-dasharray:4 3} .tree .ch.tmp text{fill:var(--temp)}
+.tree text{font-family:"Archivo",Arial,sans-serif}
+
+/* ---------- Control spectrum ---------- */
+.axis{display:flex;justify-content:space-between;align-items:center;gap:16px;font-size:13px;font-weight:600;color:var(--mute);margin-bottom:10px}
+.axis::before{content:"";order:1;flex:1;height:2px;background:linear-gradient(90deg,var(--text),var(--line))}
+.axis span:last-child{order:2}
+.spectrum-scroll{overflow-x:auto}
+.spectrum{display:grid;grid-template-columns:repeat(5,minmax(180px,1fr));gap:6px;min-width:940px}
+.fam{border-top:3px solid var(--tc);padding:16px 14px 18px;background:var(--soft);border-radius:0 0 2px 2px;display:flex;flex-direction:column;gap:12px}
+.fam h3{margin:0;font-size:16px}
+.meter{display:flex;gap:3px}
+.meter i{flex:1;height:6px;border-radius:1px;background:var(--line)}
+.meter i.f{background:var(--tc)}
+.kv{font-size:12.5px;line-height:1.4}
+.kv dt{color:var(--mute)} .kv dd{margin:0 0 6px;font-weight:600}
+.chips{display:flex;flex-wrap:wrap;gap:4px}
+.chips span{font-size:12px;padding:3px 8px;border-radius:2px;background:var(--paper);border:1px solid var(--line);line-height:1.3}
+.chips span.more{color:var(--mute);border-style:dashed}
+.chips span.tmp{background:var(--temp-bg);border:1px dashed var(--temp-line);color:var(--temp)}
+.grp{font-size:12px;font-weight:650;color:var(--mute);margin:2px 0 -4px}
+.fam.c-search{--tc:var(--t1)} .fam.c-pmax{--tc:var(--t2)} .fam.c-dg{--tc:var(--t3)}
+
+/* ---------- ABC + feed ---------- */
+.duo{display:grid;grid-template-columns:1.1fr 1fr;gap:48px}
+.duo > div{border-top:2px solid var(--text);padding-top:16px}
+.abc{margin-top:14px;display:grid;gap:8px}
+.abc-row{display:grid;grid-template-columns:52px 1fr 24px 1.15fr;align-items:center;gap:12px;
+  padding:12px 14px;background:var(--soft);border-radius:2px}
+.abc-row .L{font-stretch:125%;font-weight:800;font-size:32px;line-height:1;color:var(--tc)}
+.abc-row .what{font-size:13px;color:var(--mute);line-height:1.35}
+.abc-row .what b{display:block;color:var(--text);font-size:14px}
+.abc-row .arr{color:var(--mute);font-size:18px;text-align:center}
+.abc-row .where b{display:block;font-size:14px}
+.tiers{display:flex;gap:4px;margin-top:5px}
+.tiers span{font-size:11px;font-weight:700;padding:1px 6px;border-radius:2px;background:var(--paper);color:var(--mute);border:1px solid var(--line)}
+.tiers span.on{background:var(--t1-bg);color:var(--t1);border-color:transparent}
+.loop{display:flex;gap:12px;align-items:flex-start;margin-top:12px;font-size:13.5px;color:var(--mute)}
+.loop svg{flex:none;margin-top:2px}
+.loop svg path{stroke:var(--t1);fill:none;stroke-width:1.8}
+.feed{margin-top:14px;display:grid;gap:8px}
+.feed-row{display:grid;grid-template-columns:44px 1fr auto;gap:14px;align-items:center;padding:12px 14px;background:var(--soft);border-radius:2px}
+.feed-row.t1{--tc:var(--t1)}.feed-row.t2{--tc:var(--t2)}.feed-row.t3{--tc:var(--t3)}
+.feed-row b.tn{font-stretch:125%;font-weight:800;font-size:20px;color:var(--tc)}
+.feed-row p{font-size:13.5px}
+.feed-row p small{display:block;color:var(--mute);font-size:12.5px}
+.sw2{width:42px;height:24px;border-radius:12px;background:var(--line);position:relative}
+.sw2::after{content:"";position:absolute;top:3px;left:3px;width:18px;height:18px;border-radius:50%;background:var(--paper);box-shadow:0 1px 2px rgba(0,0,0,.25)}
+.sw2.on{background:var(--good)} .sw2.on::after{left:21px}
+.sw2.half{background:repeating-linear-gradient(135deg,var(--line) 0 4px,var(--soft) 4px 8px)}
+.sw2.half::after{left:12px}
+.feed-meta{margin-top:16px;display:grid;grid-template-columns:1fr 1fr;gap:16px;font-size:13.5px}
+.feed-meta h4{margin:0 0 6px;font-size:13px;color:var(--mute);font-weight:600}
+.code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:12px}
+.deadline{margin-top:16px;display:flex;gap:12px;align-items:center;padding:12px 14px;border:1px solid var(--temp-line);background:var(--temp-bg);border-radius:2px;font-size:13.5px}
+.deadline b{color:var(--temp);font-stretch:112%;white-space:nowrap}
+.srcnote{margin-top:22px;font-size:12.5px;color:var(--mute)}
+
+
+/* ---------- UI revision ---------- */
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.toc{position:sticky;top:0;z-index:20;background:color-mix(in srgb,var(--paper) 92%,transparent);
+  -webkit-backdrop-filter:saturate(1.4) blur(10px);backdrop-filter:saturate(1.4) blur(10px);
+  border-bottom:1px solid var(--line);padding-top:env(safe-area-inset-top,0px);margin-top:calc(-1*env(safe-area-inset-top,0px))}
+.toc ul{list-style:none;margin:0;padding:0;display:flex;gap:4px;overflow-x:auto;scrollbar-width:none}
+.toc ul::-webkit-scrollbar{display:none}
+.toc a{display:flex;align-items:center;min-height:48px;padding:0 12px;font-size:14px;font-weight:500;color:var(--mute);
+  text-decoration:none;white-space:nowrap;border-bottom:2px solid transparent;transition:color .15s,border-color .15s}
+.toc a:hover{color:var(--text)}
+.toc a[aria-current="true"]{color:var(--text);border-color:var(--t1)}
+html{scroll-padding-top:calc(56px + env(safe-area-inset-top,0px))}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+.viewbar{display:flex;align-items:center;justify-content:space-between;gap:12px 20px;flex-wrap:wrap;margin-bottom:22px}
+.viewbar .tabs{margin:0}
+.tabs button{min-height:44px;padding:0 18px;transition:background .15s,color .15s}
+.tabs button:hover{color:var(--text)}
+.src{display:inline-flex;align-items:center;gap:6px;min-height:44px;font-size:13.5px;font-weight:600;color:var(--t1);text-decoration:none}
+.src:hover{text-decoration:underline;text-underline-offset:3px}
+.srcnote .src{min-height:0;margin-left:6px}
+.tiers span{font-size:12px}
+.test .tag{font-size:12px}
+.mlab{font-size:12px;font-weight:600;color:var(--mute);white-space:nowrap}
+.mrow{display:flex;align-items:center;gap:10px}
+.mrow .meter{flex:1}
+[role="tabpanel"]{animation:fadein .2s ease-out}
+@keyframes fadein{from{opacity:0}to{opacity:1}}
+
+/* HTML tree (replaces the fixed-size SVG) */
+.tree2{--ln:var(--mute)}
+.t-root{width:max-content;max-width:100%;margin:0 auto;background:var(--text);color:var(--paper);padding:12px 28px;border-radius:4px;text-align:center;position:relative}
+.t-root b{display:block;font-size:16px}
+.t-root span{font-size:13px;opacity:.8}
+.t-root::after{content:"";position:absolute;left:50%;top:100%;height:24px;border-left:1.5px solid var(--ln)}
+.t-branches{display:grid;grid-template-columns:4fr 2fr 2fr 1.15fr;margin-top:24px}
+.t-br{position:relative;padding:24px 6px 0}
+.t-br::before{content:"";position:absolute;top:0;left:50%;height:24px;border-left:1.5px solid var(--ln)}
+.t-br::after{content:"";position:absolute;top:0;left:0;right:0;border-top:1.5px solid var(--ln)}
+.t-br:first-child::after{left:50%} .t-br:last-child::after{right:50%}
+.t-bh{width:max-content;max-width:100%;margin:0 auto;padding:10px 20px;border:2px solid var(--tc);background:var(--soft);border-radius:3px;font-weight:700;font-size:15px;position:relative}
+.t-bh::after{content:"";position:absolute;left:50%;top:100%;height:22px;border-left:1.5px solid var(--ln)}
+.t-leaves{display:grid;grid-template-columns:repeat(var(--n),minmax(0,1fr));margin-top:22px}
+.t-lf{position:relative;padding:22px 4px 0}
+.t-lf::before{content:"";position:absolute;top:0;left:50%;height:22px;border-left:1.5px solid var(--ln)}
+.t-lf::after{content:"";position:absolute;top:0;left:0;right:0;border-top:1.5px solid var(--ln)}
+.t-lf:first-child::after{left:50%} .t-lf:last-child::after{right:50%}
+.t-lf:only-child::after{display:none}
+.t-card{border:1px solid var(--line);border-radius:3px;padding:12px 10px;text-align:center;background:var(--paper);height:100%}
+.t-card b{display:block;font-size:14px;line-height:1.25}
+.t-card span{display:block;font-size:12px;color:var(--mute);margin-top:2px;line-height:1.3}
+.t-card ul{list-style:none;margin:10px 0 0;padding:0;display:grid;gap:4px}
+.t-card li{white-space:nowrap;font-size:12.5px;font-weight:700;padding:4px 6px;border-radius:2px;background:var(--t1-bg);color:var(--t1)}
+.t-card li.pm{background:var(--t2-bg);color:var(--t2)}
+.t-card li.dg{background:var(--t3-bg);color:var(--t3)}
+.t-card li.tmp{background:var(--temp-bg);color:var(--temp);border:1px dashed var(--temp-line)}
+
+/* Mobile matrix */
+.matrix-m{display:none}
+.mcard{border:1px solid var(--line);border-top:3px solid var(--tc,var(--text));border-radius:2px;padding:14px 16px;margin-bottom:10px}
+.mcard.t1{--tc:var(--t1)} .mcard.t2{--tc:var(--t2)} .mcard.t3{--tc:var(--t3)} .mcard.nat{--tc:var(--temp)}
+.mh{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.mh b{font-stretch:125%;font-weight:800;font-size:22px;color:var(--tc)}
+.mcard.nat .mh b{font-stretch:100%;font-size:17px;color:var(--text)}
+.mh span{font-size:12.5px;color:var(--mute);text-align:right}
+.mcard dl{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin:10px 0 6px;padding:10px 0;border-bottom:1px solid var(--line)}
+.mcard dt{font-size:12px;color:var(--mute)} .mcard dd{margin:0;font-weight:700;font-variant-numeric:tabular-nums}
+.mcard ul{list-style:none;margin:0;padding:0}
+.mcard li{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:9px 0;border-bottom:1px solid var(--line);font-size:14.5px}
+.mcard li:last-child{border-bottom:0}
+.mcard li b{font-size:13.5px;padding:3px 9px;border-radius:2px;background:var(--t1-bg);color:var(--t1);white-space:nowrap}
+.mcard li b.pm{background:var(--t2-bg);color:var(--t2)} .mcard li b.dg{background:var(--t3-bg);color:var(--t3)}
+.mcard li b.tmp{background:var(--temp-bg);color:var(--temp);border:1px dashed var(--temp-line)}
+.mcard li b.off{background:transparent;color:var(--mute);font-weight:500}
+
+@media (max-width:900px){
+  .matrix-scroll{display:none}
+  .matrix-m{display:block}
+  .legend .spacer{display:none}
+  .spectrum{grid-template-columns:1fr;min-width:0}
+  .axis::before{display:none}
+  .axis span{display:none}
+  .axis::after{content:"Do mais controlado ao mais amplo";font-weight:600}
+  .t-branches{grid-template-columns:1fr;gap:20px;margin-top:16px}
+  .t-root::after,.t-br::before,.t-br::after,.t-bh::after,.t-lf::before,.t-lf::after{display:none}
+  .t-root{width:auto}
+  .t-br{padding:0 0 0 14px;border-left:3px solid var(--tc)}
+  .t-bh{margin:0;border:0;background:none;padding:0 0 8px;font-size:16px}
+  .t-leaves{grid-template-columns:1fr 1fr;gap:8px;margin-top:0}
+  .t-lf{padding:0}
+  .t-card{text-align:left}
+}
+@media (max-width:420px){ .t-leaves{grid-template-columns:1fr} }
+
+/* ---------- Comparison ---------- */
+.cmp{width:100%;border-collapse:collapse;font-size:14.5px}
+.cmp th{text-align:left;font-weight:600;font-size:13px;color:var(--mute);padding:0 16px 10px 0;border-bottom:2px solid var(--text)}
+.cmp td{padding:14px 16px 14px 0;border-bottom:1px solid var(--line);vertical-align:top}
+.cmp td:first-child{font-weight:650;width:18%}
+.cmp td:nth-child(2){color:var(--mute);width:38%}
+.cmp td:nth-child(3){position:relative;padding-left:22px}
+.cmp td:nth-child(3)::before{content:"";position:absolute;left:0;top:22px;width:10px;height:2px;background:var(--t1)}
+
+/* ---------- Phases ---------- */
+.phases{display:grid;grid-template-columns:repeat(5,1fr);gap:0}
+.band{grid-column:span 2;font-size:13px;font-weight:600;color:var(--t1);padding-bottom:10px;border-bottom:3px solid var(--t1)}
+.band.later{grid-column:span 3;color:var(--mute);border-color:var(--line);margin-left:16px}
+.phase{padding:22px 20px 0 0;position:relative}
+.phase .dot{width:28px;height:28px;border-radius:50%;display:grid;place-items:center;
+  font-size:13px;font-weight:700;border:2px solid var(--mute);color:var(--mute);background:var(--paper);margin-bottom:14px}
+.phase.now .dot{background:var(--t1);border-color:var(--t1);color:#fff}
+.phase p{font-size:14px;color:var(--mute)}
+.notes{display:grid;grid-template-columns:1fr 1fr;gap:36px;margin-top:40px}
+@media (min-width:901px){
+  .notes.three{grid-template-columns:repeat(3,1fr);gap:32px}
+  .phase{position:relative}
+  .phase:not(:last-child)::after{content:"";position:absolute;top:36px;left:40px;right:12px;border-top:2px dashed var(--line)}
+  .phase.now:not(:nth-child(4))::after{border-color:var(--t1)}
+}
+.gate{margin-top:32px;display:grid;grid-template-columns:minmax(200px,.8fr) 1fr 1fr;gap:0;border:1px solid var(--line);border-left:3px solid var(--t1);background:var(--t1-bg);border-radius:2px}
+.gate > *{padding:16px 20px}
+.gate-t{font-weight:650;font-size:15px;align-self:center}
+.gate-t small{display:block;font-weight:400;font-size:13px;color:var(--mute);margin-top:4px}
+.gate-m{border-left:1px solid var(--line)}
+.gate-m b{display:block;font-stretch:118%;font-weight:800;font-size:26px;line-height:1.1;color:var(--t1);font-variant-numeric:tabular-nums}
+.gate-m span{display:block;font-size:13.5px;color:var(--mute);margin-top:4px}
+@media (max-width:900px){.gate{grid-template-columns:1fr}.gate-m{border-left:0;border-top:1px solid var(--line)}}
+.notes > div{border-top:2px solid var(--text);padding-top:16px}
+.notes ul{margin:8px 0 0;padding:0;list-style:none}
+.notes li{position:relative;padding-left:18px;margin-top:8px;font-size:14.5px}
+.notes li::before{content:"";position:absolute;left:0;top:10px;width:6px;height:6px;background:var(--t1)}
+.pending{color:var(--temp);font-weight:650}
+
+/* ---------- Closing ---------- */
+.close{display:grid;grid-template-columns:1.15fr 1fr 1fr;gap:36px}
+.close > div{border-top:2px solid var(--text);padding-top:16px}
+.steps{margin:8px 0 0;padding:0;list-style:none;counter-reset:s}
+.steps li{counter-increment:s;position:relative;padding:12px 0 12px 34px;border-bottom:1px solid var(--line)}
+.steps li:last-child{border-bottom:0}
+.steps li::before{content:counter(s);position:absolute;left:0;top:12px;font-stretch:125%;font-weight:800;font-size:18px;color:var(--t1)}
+.steps b{display:block;font-size:15px}
+.steps span{display:block;margin-top:2px;line-height:1.5;font-size:14px;color:var(--mute)}
+.test{padding:14px 0;border-bottom:1px solid var(--line)}
+.test:last-child{border-bottom:0}
+.test .tag{display:inline-block;font-size:11.5px;font-weight:600;color:var(--temp);background:var(--temp-bg);
+  border:1px solid var(--temp-line);padding:1px 8px;border-radius:2px;margin-bottom:6px}
+.test b{display:block;font-size:15px}
+.test p{font-size:14px;color:var(--mute);margin-top:2px}
+.plist{margin:8px 0 0;padding:0;list-style:none}
+.plist li{display:grid;grid-template-columns:18px 1fr;gap:10px;padding:11px 0;border-bottom:1px solid var(--line);font-size:14px}
+.plist li:last-child{border-bottom:0}
+.plist li::before{content:"";width:10px;height:10px;margin-top:6px;border:2px solid var(--temp);border-radius:50%}
+
+footer{padding:28px 0 40px;font-size:12px;color:var(--mute)}
+footer .wrap{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
+footer p{max-width:80ch}
+
+/* ---------- Responsive ---------- */
+@media (max-width:900px){
+  .duo{grid-template-columns:1fr;gap:36px}
+  .feed-meta{grid-template-columns:1fr}
+  .abc-row{grid-template-columns:40px 1fr;}
+  .abc-row .arr{display:none}
+  .abc-row .where{grid-column:2}
+  .facts{grid-template-columns:1fr 1fr}
+  .fact:nth-child(3){padding-left:0;border-left:0}
+  .fact:nth-child(n+3){border-top:1px solid var(--line)}
+  .ctx,.notes,.close{grid-template-columns:1fr;gap:28px}
+  .phases{grid-template-columns:1fr}
+  .band,.band.later{grid-column:auto;margin-left:0}
+  .band.later{margin-top:20px}
+  .phase{display:grid;grid-template-columns:40px 1fr;gap:0 12px;padding-right:0}
+  .phase .dot{grid-row:span 2;margin:0}
+  .meta{grid-template-columns:1fr 1fr;gap:16px 32px}
+  .cmp td:first-child{width:auto}
+  .cmp thead{display:none}
+  .cmp tr{display:block;border-bottom:1px solid var(--line);padding:12px 0}
+  .cmp td{display:block;border:0;padding:2px 0 2px 0;width:auto!important}
+  .cmp td:nth-child(3){padding-left:22px}
+  .cmp td:nth-child(3)::before{top:12px}
+}
+@media (prefers-reduced-motion:reduce){
+  .tier .bar i{animation:none}
+}
+@media print{
+  .hero{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  section{break-inside:avoid}
+}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="brandbar">
+      <span class="logo">CALIBER<span>3135</span></span><i></i>
+      <span>Proposta de estrutura de Google Ads, versão 1.0</span>
+    </div>
+    <div class="hero-grid">
+    <div class="hero-copy">
+    <h1>Fluxo Comprar<span class="h1-sub">Nova estrutura de Google Ads</span></h1>
+    <p class="lede">Unificação das contas WM | Comprar e WM | Expansão em uma conta só, com campanhas definidas pela intenção de busca e a geografia organizada em três tiers por volume e faixa de CPA.</p>
+    </div>
+    <figure class="vcard">
+      <div class="vframe">
+        <video controls playsinline preload="metadata" poster="poster.jpg" aria-label="Vídeo: Fluxo Comprar, nova estrutura de Google Ads">
+          <source src="video.mp4" type="video/mp4">
+        </video>
+      </div>
+      <figcaption class="vmeta"><b>Nova estrutura em 1 minuto</b><a href="https://youtu.be/afRC2Pd4GH0" target="_blank" rel="noopener">Também no YouTube<svg width="13" height="13" viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3H3v10h10v-3M9 3h4v4M13 3 7 9" fill="none" stroke="currentColor" stroke-width="1.6"/></svg><span class="sr">(abre em nova aba)</span></a></figcaption>
+    </figure>
+    </div>
+    <dl class="meta">
+      <div><dt>Versão</dt><dd>v1.0, 13/10/2026</dd></div>
+      <div><dt>Público</dt><dd>Liderança Webmotors</dd></div>
+      <div><dt>Autoria</dt><dd>Time de auditoria e diagnóstico, Caliber 3135</dd></div>
+    </dl>
+  </div>
+</header>
+
+<nav class="toc" aria-label="Seções">
+  <div class="wrap"><ul>
+    <li><a href="#contexto">Contexto</a></li>
+    <li><a href="#estrutura">Estrutura</a></li>
+    <li><a href="#controle">Controle e alcance</a></li>
+    <li><a href="#granularidade">Curva ABC e feed</a></li>
+    <li><a href="#comparativo">Hoje e proposta</a></li>
+    <li><a href="#lance">Metas e lance</a></li>
+    <li><a href="#proximos">Próximos passos</a></li>
+  </ul></div>
+</nav>
+
+<main>
+  <!-- Contexto -->
+  <section id="contexto">
+    <div class="wrap">
+      <div class="sec-head"><span class="n">01</span><h2>Por que unificar Comprar e Expansão</h2></div>
+      <div class="facts">
+        <div class="fact"><b>2</b><span>contas operando o fluxo de compra</span></div>
+        <div class="fact"><b>14</b><span>campanhas ativas</span></div>
+        <div class="fact"><b>R$ 22,6 mi</b><span>investidos de janeiro a agosto de 2026</span></div>
+        <div class="fact"><b>~1,5 mi</b><span>conversões no período</span></div>
+      </div>
+      <div class="ctx">
+        <div><h3>Como está hoje</h3><p>O território é dividido entre as contas, cada uma otimiza para uma meta de conversão própria e a mesma intenção de busca aparece em mais de uma campanha. A estrutura ficou difícil de operar e de ler.</p></div>
+        <div><h3>O que os dados mostram</h3><p>São Paulo concentra 59% da verba e 47% das conversões em Search e PMax. Na PMax, duas campanhas disputam o mesmo leilão com o mesmo asset group.</p></div>
+        <div><h3>O que muda</h3><p>Uma meta e uma régua de leitura, menos sobreposição. O orçamento por tier vira a alavanca geográfica sob CPA alvo, e relevância vem antes de mais investimento: mais verba aumenta a participação em leilões, mas não melhora o Ad Rank em cada um. Exemplo das calls: busca por SUV a diesel caindo em listagem de gasolina.</p></div>
+        <p class="quote">No Search, a parcela de impressões se perde mais por classificação do que por orçamento. O limite hoje é qualidade e estrutura, não verba.<small>Search + PMax, WM | Comprar e WM | Expansão, 01/01 a 31/08/2026</small></p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Matriz -->
+  <section id="estrutura">
+    <div class="wrap">
+      <div class="sec-head"><span class="n">02</span><h2>A intenção de busca define a campanha. O tier define orçamento e meta.</h2></div>
+
+      <div class="viewbar"><div class="tabs" role="tablist" aria-label="Visualização da estrutura">
+        <button role="tab" id="tab-t" aria-controls="pan-t" aria-selected="true">Árvore de campanhas</button>
+        <button role="tab" id="tab-m" aria-controls="pan-m" aria-selected="false" tabindex="-1">Intenção × tier</button>
+      </div>
+      <a class="src" href="https://miro.com/app/board/uXjVEaCvPwA=/?moveToWidget=3458764685135360406" target="_blank" rel="noopener">Ver board no Miro<svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3H3v10h10v-3M9 3h4v4M13 3 7 9" fill="none" stroke="currentColor" stroke-width="1.6"/></svg><span class="sr">(abre em nova aba)</span></a></div>
+
+      <div id="pan-t" role="tabpanel" aria-labelledby="tab-t">
+        <div class="tree2" role="group" aria-label="Árvore: conta unificada, formatos e as 16 campanhas numeradas">
+          <div class="t-root"><b>Conta unificada</b><span>Comprar + Expansão</span></div>
+          <div class="t-branches">
+            <div class="t-br" style="--tc:var(--t1);--n:4"><div class="t-bh">Search</div><div class="t-leaves">
+              <div class="t-lf"><div class="t-card"><b>Institucional</b><span>Marca Webmotors</span><ul><li class="tmp">#1 · Teste</li></ul></div></div>
+              <div class="t-lf"><div class="t-card"><b>Modelos</b><span>Montadora + modelo</span><ul><li class="">#2 · T1</li><li class="">#3 · T2</li></ul></div></div>
+              <div class="t-lf"><div class="t-card"><b>Categoria</b><span>Finalidade e elétricos</span><ul><li class="">#4 · T1</li><li class="">#5 · T2</li><li class="">#6 · T3</li></ul></div></div>
+              <div class="t-lf"><div class="t-card"><b>Genérica</b><span>AI Max + page feed</span><ul><li class="">#7 · T1</li><li class="">#8 · T2</li><li class="">#9 · T3</li></ul></div></div>
+            </div></div>
+            <div class="t-br" style="--tc:var(--t2);--n:2"><div class="t-bh">PMax</div><div class="t-leaves">
+              <div class="t-lf"><div class="t-card"><b>PMax por tier</b><span>Usados e Zero km</span><ul><li class="pm">#10 · T1</li><li class="pm">#11 · T2</li><li class="pm">#12 · T3</li></ul></div></div>
+              <div class="t-lf"><div class="t-card"><b>Com e sem feed</b><span>Controle: #10</span><ul><li class="tmp">#13 · Teste</li></ul></div></div>
+            </div></div>
+            <div class="t-br" style="--tc:var(--t3);--n:2"><div class="t-bh">Demand Gen e Vídeo</div><div class="t-leaves">
+              <div class="t-lf"><div class="t-card"><b>Always-on</b><span>Topo e remarketing</span><ul><li class="dg">#14 · Nacional</li></ul></div></div>
+              <div class="t-lf"><div class="t-card"><b>Brand test</b><span>Search Lift, roda com #1</span><ul><li class="tmp">#15 · Teste</li></ul></div></div>
+            </div></div>
+            <div class="t-br" style="--tc:var(--temp);--n:1"><div class="t-bh">Sazonal</div><div class="t-leaves">
+              <div class="t-lf"><div class="t-card"><b>Feirão e Black Friday</b><span>Search, PMax e Vídeo</span><ul><li class="tmp">#16 · Nacional</li></ul></div></div>
+            </div></div>
+          </div>
+        </div>
+      </div>
+
+      <div id="pan-m" role="tabpanel" aria-labelledby="tab-m" hidden>
+      <div class="matrix-scroll" role="region" aria-label="Matriz de campanhas por intenção e tier" tabindex="0">
+        <div class="matrix">
+          <div class="corner">Tier e desempenho histórico</div>
+          <div class="colhead search"><h3>Search · Modelos</h3><p>Montadora + modelo, exata e frase, sem AI Max</p></div>
+          <div class="colhead search"><h3>Search · Categoria</h3><p>Finalidade e elétricos, exata e frase, sem AI Max</p></div>
+          <div class="colhead search"><h3>Search · Genérica</h3><p>AI Max controlado por page feed e exclusões de URL</p></div>
+          <div class="colhead pmax"><h3>PMax</h3><p>Usados e Zero km como asset groups, sinal de público obrigatório</p></div>
+          <div class="colhead dg"><h3>Demand Gen</h3><p>Always-on, prospecção e remarketing</p></div>
+
+          <!-- T1 -->
+          <div class="tier t1">
+            <div class="name"><b>T1</b><span>SP</span></div>
+            <div class="bar"><i style="--w:59%"></i></div>
+            <dl><dt>Verba</dt><dt>Conv.</dt><dt>CPA</dt><dd>59%</dd><dd>47%</dd><dd>R$ 17,52</dd></dl>
+          </div>
+          <div class="cell on t1"><span class="id">#2</span><span class="lbl">Lista curada Classe A</span></div>
+          <div class="cell on t1"><span class="id">#4</span><span class="lbl">Uber e apps, 7 lugares, elétricos</span></div>
+          <div class="cell on t1"><span class="id">#7</span><span class="lbl">Expansão de URL desligada</span></div>
+          <div class="cell split t1">
+            <div class="p" style="background:var(--t2-bg)"><span class="id" style="color:var(--t2)">#10</span><span class="lbl">Controle</span></div>
+            <div class="tp"><span class="id">#13</span><span class="lbl">Teste com feed</span></div>
+          </div>
+          <div class="cell off" aria-hidden="true"></div>
+
+          <!-- T2 -->
+          <div class="tier t2">
+            <div class="name"><b>T2</b><span>PR, RJ, MG, SC, RS, DF</span></div>
+            <div class="bar"><i style="--w:34%;--d:.12s"></i></div>
+            <dl><dt>Verba</dt><dt>Conv.</dt><dt>CPA</dt><dd>34%</dd><dd>42%</dd><dd>R$ 11,32</dd></dl>
+          </div>
+          <div class="cell on t1"><span class="id">#3</span><span class="lbl">Lista curada Classe A</span></div>
+          <div class="cell on t1"><span class="id">#5</span><span class="lbl">Classe B da curva</span></div>
+          <div class="cell on t1"><span class="id">#8</span><span class="lbl">Expansão de URL desligada no aprendizado</span></div>
+          <div class="cell on t2"><span class="id">#11</span><span class="lbl">Uma PMax por tier</span></div>
+          <div class="cell off" aria-hidden="true"></div>
+
+          <!-- T3 -->
+          <div class="tier t3">
+            <div class="name"><b>T3</b><span>GO, BA, CE + 17 estados</span></div>
+            <div class="bar"><i style="--w:7%;--d:.24s"></i></div>
+            <dl><dt>Verba</dt><dt>Conv.</dt><dt>CPA</dt><dd>7%</dd><dd>11%</dd><dd>R$ 9,23</dd></dl>
+          </div>
+          <div class="cell off"><span class="lbl">Volume por modelo baixo; Genérica cobre</span></div>
+          <div class="cell on t1"><span class="id">#6</span><span class="lbl">Classe B da curva</span></div>
+          <div class="cell on t1"><span class="id">#9</span><span class="lbl">Expansão de URL ligada</span></div>
+          <div class="cell on t2"><span class="id">#12</span><span class="lbl">Uma PMax por tier</span></div>
+          <div class="cell off" aria-hidden="true"></div>
+
+          <!-- Nacional -->
+          <div class="rowlabel"><b>Nacional</b><span>Camada leve o ano todo, pico sazonal</span></div>
+          <div class="cell temp span4"><span class="id">#16 Feirão e Black Friday</span><span class="lbl">Sazonal em Search, PMax e Vídeo</span></div>
+          <div class="cell on t3"><span class="id" style="color:var(--t3)">#14</span><span class="lbl">Always-on nacional</span></div>
+
+          <!-- Teste -->
+          <div class="rowlabel"><b>Praças do teste</b><span>Incrementalidade de marca, com grupo de controle</span></div>
+          <div class="cell temp span3"><span class="id">#1 Institucional</span><span class="lbl">Marca Webmotors só nas praças do brand test. Sem campanha always-on de marca</span></div>
+          <div class="cell off" aria-hidden="true"></div>
+          <div class="cell temp"><span class="id">#15</span><span class="lbl">Search Lift</span></div>
+        </div>
+      </div>
+      <div class="matrix-m">
+<div class="mcard t1"><div class="mh"><b>T1</b><span>SP</span></div><dl><div><dt>Verba</dt><dd>59%</dd></div><div><dt>Conv.</dt><dd>47%</dd></div><div><dt>CPA</dt><dd>R$ 17,52</dd></div></dl><ul><li><span>Modelos</span><b class="">#2</b></li><li><span>Categoria</span><b class="">#4</b></li><li><span>Genérica</span><b class="">#7</b></li><li><span>PMax</span><b class="pm">#10 + #13 teste</b></li></ul></div><div class="mcard t2"><div class="mh"><b>T2</b><span>PR, RJ, MG, SC, RS, DF</span></div><dl><div><dt>Verba</dt><dd>34%</dd></div><div><dt>Conv.</dt><dd>42%</dd></div><div><dt>CPA</dt><dd>R$ 11,32</dd></div></dl><ul><li><span>Modelos</span><b class="">#3</b></li><li><span>Categoria</span><b class="">#5</b></li><li><span>Genérica</span><b class="">#8</b></li><li><span>PMax</span><b class="pm">#11</b></li></ul></div><div class="mcard t3"><div class="mh"><b>T3</b><span>GO, BA, CE + 17 estados</span></div><dl><div><dt>Verba</dt><dd>7%</dd></div><div><dt>Conv.</dt><dd>11%</dd></div><div><dt>CPA</dt><dd>R$ 9,23</dd></div></dl><ul><li><span>Modelos</span><b class="off">Genérica cobre</b></li><li><span>Categoria</span><b class="">#6</b></li><li><span>Genérica</span><b class="">#9</b></li><li><span>PMax</span><b class="pm">#12</b></li></ul></div><div class="mcard nat"><div class="mh"><b>Nacional e testes</b></div><ul><li><span>Demand Gen always-on</span><b class="dg">#14</b></li><li><span>Feirão e Black Friday</span><b class="tmp">#16</b></li><li><span>Institucional, praças do teste</span><b class="tmp">#1</b></li><li><span>Search Lift, praças do teste</span><b class="tmp">#15</b></li></ul></div>
+      </div>
+      </div>
+
+      <div class="legend">
+        <div class="count"><b>12</b> permanentes</div>
+        <div class="count tmp"><b>4</b> temporárias</div>
+        <div class="count all"><b>16</b> no pico, com tudo no ar</div>
+        <span class="spacer"></span>
+        <span class="sw"><i></i>Permanente</span>
+        <span class="sw"><i class="d"></i>Teste ou sazonal</span>
+      </div>
+      <p class="small muted" style="margin-top:14px">Verba, conversões e CPA: Search + PMax, 01/01 a 31/08/2026, total de R$ 21,1 mi e 1,51 mi de conversões. Numeração conforme o board de estrutura.</p>
+      <div class="notes" style="margin-top:28px">
+        <div><h3>Ponto de atenção no T2</h3><p class="small" style="font-size:14.5px">Bloco monitorado por share de verba por estado. Se o algoritmo asfixiar as praças mais caras, como DF, o cluster é dividido em dois depois da veiculação.</p></div>
+        <div><h3>Ponto de atenção no T3</h3><p class="small" style="font-size:14.5px">GO, BA e CE puxam o CPA para baixo e somam 79% das conversões do tier. Monitorar se a cauda perde entrega.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Controle x alcance -->
+  <section id="controle">
+    <div class="wrap">
+      <div class="sec-head"><span class="n">03</span><h2>Controle onde a intenção é clara, alcance onde não é</h2></div>
+      <div class="axis"><span>Mais controle</span><span>Mais alcance</span></div>
+      <div class="spectrum-scroll">
+      <div class="spectrum">
+        <div class="fam c-search">
+          <h3>Search · Modelos</h3>
+          <div class="mrow"><span class="mlab">Controle 5/5</span><div class="meter" aria-hidden="true"><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i></div></div>
+          <dl class="kv"><dt>Correspondência</dt><dd>Exata e frase, sem AI Max</dd><dt>Controle vem de</dt><dd>Lista curada Classe A</dd></dl>
+          <p class="grp">Um ad group por modelo</p>
+          <div class="chips"><span>Corolla</span><span>HB20</span><span>Creta</span><span>Onix</span><span>Gol</span><span>T-Cross</span><span>Civic</span><span>City</span><span>Compass</span><span>Renegade</span><span>Strada</span><span>Toro</span><span>Argo</span><span>Ranger</span><span class="more">demais Classe A</span></div>
+        </div>
+        <div class="fam c-search">
+          <h3>Search · Categoria</h3>
+          <div class="mrow"><span class="mlab">Controle 4/5</span><div class="meter" aria-hidden="true"><i class="f"></i><i class="f"></i><i class="f"></i><i class="f"></i><i></i></div></div>
+          <dl class="kv"><dt>Correspondência</dt><dd>Exata e frase, sem AI Max</dd><dt>Controle vem de</dt><dd>Negativação cruzada com Modelos</dd></dl>
+          <p class="grp">Finalidade</p>
+          <div class="chips"><span>Uber e aplicativos</span><span>7 lugares</span></div>
+          <p class="grp">Elétricos e híbridos</p>
+          <div class="chips"><span>BYD</span><span>GWM</span><span>Toyota</span><span>Honda</span><span>Chery</span></div>
+        </div>
+        <div class="fam c-search">
+          <h3>Search · Genérica</h3>
+          <div class="mrow"><span class="mlab">Controle 3/5</span><div class="meter" aria-hidden="true"><i class="f"></i><i class="f"></i><i class="f"></i><i></i><i></i></div></div>
+          <dl class="kv"><dt>Correspondência</dt><dd>Ampla com AI Max</dd><dt>Controle vem de</dt><dd>Page feed e exclusões de URL</dd></dl>
+          <p class="grp">Transacional</p>
+          <div class="chips"><span>carro usado</span><span>comprar carro seminovo</span></div>
+          <p class="grp">Carroceria</p>
+          <div class="chips"><span>Sedã</span><span>SUV</span><span>Hatch</span><span>Picape</span><span>Perua/SW</span><span>Van</span></div>
+          <p class="grp">Faixa de preço</p>
+          <div class="chips"><span>R$ 15 mil a R$ 300 mil, por breakpoint do site</span></div>
+          <p class="grp">Regra</p>
+          <div class="chips"><span>Anúncios sem título fixado</span></div>
+        </div>
+        <div class="fam c-pmax">
+          <h3>PMax</h3>
+          <div class="mrow"><span class="mlab">Controle 2/5</span><div class="meter" aria-hidden="true"><i class="f"></i><i class="f"></i><i></i><i></i><i></i></div></div>
+          <dl class="kv"><dt>Escopo</dt><dd>Uma por tier</dd><dt>Controle vem de</dt><dd>Sinal de público e exclusões</dd></dl>
+          <p class="grp">Asset groups</p>
+          <div class="chips"><span>Usados</span><span>Zero km</span><span class="tmp">Carroceria, teste só no T1</span></div>
+          <p class="grp">Sinais</p>
+          <div class="chips"><span>Listas CDP</span><span>In-market</span><span>Concorrentes</span></div>
+        </div>
+        <div class="fam c-dg">
+          <h3>Demand Gen</h3>
+          <div class="mrow"><span class="mlab">Controle 1/5</span><div class="meter" aria-hidden="true"><i class="f"></i><i></i><i></i><i></i><i></i></div></div>
+          <dl class="kv"><dt>Escopo</dt><dd>Nacional, always-on</dd><dt>Controle vem de</dt><dd>Públicos e placements</dd></dl>
+          <p class="grp">Ad groups por estágio</p>
+          <div class="chips"><span>Prospecção</span><span>Remarketing</span></div>
+          <p class="grp">Regras</p>
+          <div class="chips"><span>Exclusão de placements</span><span>2 assets por proporção</span><span class="tmp">Meta de topo de funil em teste</span></div>
+        </div>
+      </div>
+      </div>
+      <p class="srcnote">Fonte: board Fluxo Comprar V3, detalhamento por formato. <a class="src" href="https://miro.com/app/board/uXjVEaCvPwA=/?moveToWidget=3458764685023952299" target="_blank" rel="noopener">Abrir detalhamento no Miro<svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3H3v10h10v-3M9 3h4v4M13 3 7 9" fill="none" stroke="currentColor" stroke-width="1.6"/></svg><span class="sr">(abre em nova aba)</span></a></p>
+    </div>
+  </section>
+
+  <!-- ABC + feed -->
+  <section id="granularidade">
+    <div class="wrap">
+      <div class="sec-head"><span class="n">04</span><h2>Granularidade só onde há volume. A IA escolhe a página; o feed define as opções.</h2></div>
+      <div class="duo">
+        <div>
+          <h3>Curva ABC: onde cada modelo vive</h3>
+          <div class="abc">
+            <div class="abc-row" style="--tc:var(--t1)"><span class="L">A</span><span class="what"><b>Maior volume e estoque</b>Modelos de busca alta</span><span class="arr" aria-hidden="true">→</span>
+              <span class="where"><b>Ad group próprio em Modelos</b><span class="tiers"><span class="on">T1</span><span class="on">T2</span><span>T3</span></span></span></div>
+            <div class="abc-row" style="--tc:var(--t2)"><span class="L">B</span><span class="what"><b>Volume médio</b>Intenção de nicho</span><span class="arr" aria-hidden="true">→</span>
+              <span class="where"><b>Categoria</b><span class="tiers"><span class="on">T1</span><span class="on">T2</span><span class="on">T3</span></span></span></div>
+            <div class="abc-row" style="--tc:var(--t3)"><span class="L">C</span><span class="what"><b>Cauda de estoque</b>Sem ad group de controle</span><span class="arr" aria-hidden="true">→</span>
+              <span class="where"><b>Genérica + AI Max e PMax</b><span class="tiers"><span class="on">T1</span><span class="on">T2</span><span class="on">T3</span></span></span></div>
+          </div>
+          <div class="loop">
+            <svg width="28" height="28" viewBox="0 0 28 28" aria-hidden="true"><path d="M22 9a9 9 0 1 0 1 7"/><path d="M23 3v6h-6"/></svg>
+            <p>A curva é recalculada por tier a cada trimestre. Modelo que ganha volume sobe para ad group próprio; o que perde volta para a cauda.</p>
+          </div>
+        </div>
+        <div>
+          <h3>Page feed e expansão de URL por tier</h3>
+          <div class="feed">
+            <div class="feed-row t1"><b class="tn">T1</b><p>Expansão desligada<small>Inclusão por label no ad group; protege a meta e os títulos fixados</small></p><span class="sw2" role="img" aria-label="Desligada"></span></div>
+            <div class="feed-row t2"><b class="tn">T2</b><p>Desligada no aprendizado<small>Expansão testada depois, em experimento</small></p><span class="sw2 half" role="img" aria-label="Em teste depois"></span></div>
+            <div class="feed-row t3"><b class="tn">T3</b><p>Ligada desde o início<small>Com exclusões de URL</small></p><span class="sw2 on" role="img" aria-label="Ligada"></span></div>
+          </div>
+          <div class="feed-meta">
+            <div><h4>Entra no feed</h4><p>Só URLs de vitrine com estoque ativo. Labels por tier, classe e condição: <span class="code">t1</span>, <span class="code">classe_a</span>, <span class="code">zero_km</span></p></div>
+            <div><h4>Fica de fora</h4><p>Vender, financiamento, tabela FIPE, login e área do lojista, blog, institucional, termos e busca sem resultado</p></div>
+          </div>
+          <div class="deadline"><b>Fev/2027</b><span>O DSA migra para AI Max. Configurar antes evita a migração com as opções padrão, mais abertas.</span></div>
+        </div>
+      </div>
+      <p class="srcnote">Fonte: board Fluxo Comprar V3, racional da estrutura. <a class="src" href="https://miro.com/app/board/uXjVEaCvPwA=/?moveToWidget=3458764685135833453" target="_blank" rel="noopener">Abrir racional no Miro<svg width="14" height="14" viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3H3v10h10v-3M9 3h4v4M13 3 7 9" fill="none" stroke="currentColor" stroke-width="1.6"/></svg><span class="sr">(abre em nova aba)</span></a></p>
+    </div>
+  </section>
+
+  <!-- Comparativo -->
+  <section id="comparativo">
+    <div class="wrap">
+      <div class="sec-head"><span class="n">05</span><h2>O que muda em relação à estrutura atual</h2></div>
+      <table class="cmp">
+        <thead><tr><th>Tema</th><th>Hoje</th><th>Proposta</th></tr></thead>
+        <tbody>
+          <tr><td>Geografia</td><td>Território dividido entre as duas contas por exclusão recíproca</td><td>Três tiers por volume e CPA, com a geografia dentro de cada campanha</td></tr>
+          <tr><td>Search de modelos</td><td>Uma campanha só em SP, com 1.263 grupos configurados e 4,2% ativos</td><td>Modelos em T1 e T2, lista curada por volume e estoque, negativação cruzada com Categoria</td></tr>
+          <tr><td>Marcas e genéricas</td><td>Correspondência ampla, com casos de associação cruzada ("bmw" em grupos Honda e Chevrolet)</td><td>Categoria com controle por palavra-chave; Genérica com AI Max controlado por page feed</td></tr>
+          <tr><td>Marca Webmotors</td><td>Captada por correspondência ampla e AI Max</td><td>Excluída de Genérica e PMax; Institucional só como teste de incrementalidade</td></tr>
+          <tr><td>PMax</td><td>Duas campanhas no mesmo leilão com o mesmo asset group, sem sinal de público</td><td>Uma por tier, asset groups de Usados e Zero km, sinal de público obrigatório</td></tr>
+          <tr><td>Governança de Search</td><td>DSA em inglês; Rede de Display ativa, com CPA 32% acima de Search</td><td>Idioma PT-BR e Search sem rede de Display</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- Fases -->
+  <section id="lance">
+    <div class="wrap">
+      <div class="sec-head"><span class="n">06</span><h2>Metas e lance em fases, uma alavanca por vez</h2></div>
+      <div class="phases">
+        <div class="band">Dentro do piloto</div>
+        <div class="band later">Depois da Black Friday ou do pico de janeiro</div>
+        <div class="phase now"><div class="dot">0</div><h3>Diagnóstico</h3><p>Mapear ações de cada meta personalizada, defasagem e janelas. Sem mexer no leilão.</p></div>
+        <div class="phase now"><div class="dot">1</div><h3>Maximizar conversões</h3><p>Sem CPA alvo, orçamento por tier no nível atual. O orçamento é o freio.</p></div>
+        <div class="phase"><div class="dot">2</div><h3>CPA alvo por tier</h3><p>Definido a partir do CPA observado na fase 1.</p></div>
+        <div class="phase"><div class="dot">3</div><h3>Meta principal</h3><p>Uma ação principal, demais secundárias, histórico recalculado.</p></div>
+        <div class="phase"><div class="dot">4</div><h3>Reavaliar CPA alvo</h3><p>Conferir se a meta precisa de ajuste.</p></div>
+      </div>
+      <div class="gate" role="note">
+        <p class="gate-t">Entre cada fase, esperar o aprendizado terminar<small>A linha tracejada da timeline marca esse intervalo.</small></p>
+        <div class="gate-m"><b>~50 conversões</b><span>ou 3 ciclos de conversão, segundo o Google Ads</span></div>
+        <div class="gate-m"><b>7 a 14 dias</b><span>após cada mudança relevante, referência operacional do playbook Webmotors</span></div>
+      </div>
+      <div class="notes three">
+        <div>
+          <h3>Regras da transição</h3>
+          <ul>
+            <li>Uma alavanca por vez: orçamento, CPA alvo, meta e janela nunca mudam na mesma janela de aprendizado.</li>
+            <li>Regra de proteção aprovada antes de subir. <span class="pending">Valores pendentes.</span></li>
+            <li>Início fora de janela crítica, como a Black Friday.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Janela de conversão gradual</h3>
+          <ul>
+            <li>A janela de cada ação segue o ciclo real de conversão, medido no diagnóstico (fase 0).</li>
+            <li>Ajustes de janela entram aos poucos, separados das trocas de lance, e cada um espera o aprendizado terminar.</li>
+            <li>Se a defasagem passar de 30 dias, ampliar a janela e esperar os dados estabilizarem antes de ler o CPA.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Ponto de atenção na leitura</h3>
+          <ul>
+            <li>A meta principal única reduz o volume reportado e eleva o CPA aparente, sem mudar o custo real.</li>
+            <li>Prever de 2 a 4 semanas de reaprendizado após a troca de meta e acompanhar também "Todas as conversões".</li>
+          </ul>
+        </div>
+      </div>
+      <p class="srcnote">Referências: Google Ads, duração do período de aprendizado; <a href="https://playbook-gads-webmotors.vercel.app/" target="_blank" rel="noopener" style="color:var(--t1)">Playbook de Operação Google Ads Webmotors</a>, regras de ouro R1 e R2.</p>
+    </div>
+  </section>
+
+  <!-- Fechamento -->
+  <section id="proximos" style="border-bottom:0">
+    <div class="wrap">
+      <div class="sec-head"><span class="n">07</span><h2>Para avançar</h2></div>
+      <div class="close">
+        <div>
+          <h3>Próximos passos</h3>
+          <ol class="steps">
+            <li><b>Validar o processo no fluxo Comprar</b><span>Depois, aplicar a mesma metodologia a Vender e App.</span></li>
+            <li><b>Avaliar Financiar na conta unificada</b><span>Comprar e Expansão investiram R$ 251 mil em termos de financiamento entre junho e agosto; Santander Financiamentos, R$ 154 mil nos mesmos termos.</span></li>
+            <li><b>Validar a timeline de metas e lance</b><span>Fases 0 e 1 no piloto, 2 a 4 após o pico sazonal.</span></li>
+            <li><b>Definir papéis na nova estrutura</b><span>Quem responde pela implementação e pela operação do Google Ads no dia a dia.</span></li>
+            <li><b>Validar o uso do GA4</b><span>Propriedades VMotors - GA4 e webmotors.com.br - GA4 já vinculadas. Avaliar para atribuição, audiências e outros ganhos.</span></li>
+          </ol>
+        </div>
+        <div>
+          <h3>Testes em desenho</h3>
+          <div class="test"><span class="tag">Em desenho</span><b>Brand test e Search Lift</b><p>#1 e #15 nas praças do teste, com grupo de controle (holdout). Praças mapeadas via Semrush por baixa representatividade de marca. Duração e investimento mínimos definidos pelo Google (piso de 14 dias para Conversion Lift).</p></div>
+          <div class="test"><span class="tag">Em desenho</span><b>PMax com e sem feed</b><p>#13 contra #10 em T1, antes de levar o feed a todas as PMax.</p></div>
+        </div>
+        <div>
+          <h3>Pendências</h3>
+          <ul class="plist">
+            <li>Decisão entre conta nova ou uma das contas atuais</li>
+            <li>Valores da regra de proteção de CPA (X% e N dias)</li>
+            <li>Acesso ao Merchant Center e disponibilidade do feed</li>
+            <li>Filtro de geolocalização das páginas</li>
+            <li>Praças do brand test com baixa representatividade de marca</li>
+          </ul>
+        </div>
+      </div>
+      <aside class="playbook" aria-labelledby="pb-t">
+        <div>
+          <small>Referência da operação</small>
+          <h3 id="pb-t">Playbook de Operação Google Ads Webmotors</h3>
+          <p>Fonte das regras de ouro R1 e R2 e da referência de 7 a 14 dias de aprendizado usadas na timeline de metas e lance desta proposta.</p>
+        </div>
+        <a class="pb-btn" href="https://playbook-gads-webmotors.vercel.app/" target="_blank" rel="noopener">Abrir o playbook<svg width="15" height="15" viewBox="0 0 16 16" aria-hidden="true"><path d="M6 3H3v10h10v-3M9 3h4v4M13 3 7 9" fill="none" stroke="currentColor" stroke-width="1.6"/></svg><span class="sr">(abre em nova aba)</span></a>
+      </aside>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Documento confidencial. Proibido o uso sem autorização prévia. Fontes: auditorias de conta WM | Comprar e WM | Expansão, corte em 31/08/2026; Financiar, termos filtrados por intenção de financiamento nas três contas, 01/06 a 31/08/2026.</p>
+    <span>Caliber 3135 · v1.0</span>
+  </div>
+</footer>
+<script>
+(function(){
+  var tabs=[].slice.call(document.querySelectorAll('[role="tab"]'));
+  function sel(t){tabs.forEach(function(b){var on=b===t;b.setAttribute('aria-selected',on);b.tabIndex=on?0:-1;
+    document.getElementById(b.getAttribute('aria-controls')).hidden=!on;});t.focus();}
+  tabs.forEach(function(b,i){b.addEventListener('click',function(){sel(b)});
+    b.addEventListener('keydown',function(e){if(e.key==='ArrowRight'||e.key==='ArrowLeft'){e.preventDefault();
+      sel(tabs[(i+(e.key==='ArrowRight'?1:tabs.length-1))%tabs.length]);}});});
+})();
+(function(){
+  var links=[].slice.call(document.querySelectorAll('.toc a'));
+  if(!('IntersectionObserver' in window))return;
+  var map={};links.forEach(function(a){map[a.getAttribute('href').slice(1)]=a});
+  var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){
+    links.forEach(function(a){a.removeAttribute('aria-current')});
+    var a=map[e.target.id];if(a){a.setAttribute('aria-current','true');
+      var ul=a.closest('ul');ul.scrollLeft=a.parentNode.offsetLeft-16;}}})},{rootMargin:'-45% 0px -50% 0px'});
+  Object.keys(map).forEach(function(id){var el=document.getElementById(id);if(el)io.observe(el)});
+})();
+</script>
+</body>
+</html>
